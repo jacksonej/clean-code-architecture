@@ -12,12 +12,13 @@ Converting to Kotlin is in progress...
 
 
 **Libraries:**
-RxJava 2 
-Dagger 2
-ButterKnife
-Retrofit + OkHttp
-Room
-Glide
+- RxJava 2 
+- Dagger 2
+- ButterKnife
+- Retrofit + OkHttp
+- Room
+- Glide
+
 UI: RecyclerView, CardView, ConstraintLayout.
 
 
