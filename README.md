@@ -1,7 +1,7 @@
 # clean-code-architecture
 An Android project Clean Architecture using Rxjava2,Dagger,Room 
 
-## MVP with Android Clean Architeccture
+## MVP with Android Clean Architecture
 
 An Android project with MVP pattern which adapts with Clean Architecture
 
