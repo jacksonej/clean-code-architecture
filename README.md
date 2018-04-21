@@ -12,11 +12,11 @@ Converting to Kotlin is in progress...
 
 
 **Libraries:**
-Architecture Components: Room + Lifecycle.
-RxJava 2 + RxAndroid
+RxJava 2 
 Dagger 2
 ButterKnife
 Retrofit + OkHttp
+Room
 Glide
 UI: RecyclerView, CardView, ConstraintLayout.
 
