@@ -13,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import arch.in.clean_arch_poc.R;
-import arch.in.clean_arch_poc.data.model.ArticleDetail;
+import arch.in.clean_arch_poc.domain.model.ArticleDetail;
 import arch.in.clean_arch_poc.ui.base.BaseActivity;
 
 public class DetailActivity extends BaseActivity implements DetailActivityContract.View{

@@ -12,7 +12,7 @@ import javax.inject.Inject;
 
 import arch.in.clean_arch_poc.R;
 import arch.in.clean_arch_poc.data.api.MyService;
-import arch.in.clean_arch_poc.data.model.GithubContributor;
+import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import arch.in.clean_arch_poc.ui.base.BaseActivity;
 import arch.in.clean_arch_poc.ui.view.adapter.CustomAdapter;
 

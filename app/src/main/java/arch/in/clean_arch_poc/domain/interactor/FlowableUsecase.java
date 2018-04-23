@@ -11,7 +11,7 @@ import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subscribers.DisposableSubscriber;
 
 
-abstract class FlowableUsecase<T,C> {
+public abstract class FlowableUsecase<T,C> {
 
     private final CompositeDisposable disposables;
 

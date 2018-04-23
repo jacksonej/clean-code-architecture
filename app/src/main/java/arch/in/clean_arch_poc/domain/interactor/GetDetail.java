@@ -2,7 +2,7 @@ package arch.in.clean_arch_poc.domain.interactor;
 
 import javax.inject.Inject;
 
-import arch.in.clean_arch_poc.data.model.ArticleDetail;
+import arch.in.clean_arch_poc.domain.model.ArticleDetail;
 import arch.in.clean_arch_poc.data.repository.DataRepository;
 import io.reactivex.Flowable;
 

@@ -2,7 +2,7 @@ package arch.in.clean_arch_poc.ui.Main;
 
 import java.util.List;
 
-import arch.in.clean_arch_poc.data.model.GithubContributor;
+import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import arch.in.clean_arch_poc.ui.base.BasePresenter;
 import arch.in.clean_arch_poc.ui.base.BaseView;
 

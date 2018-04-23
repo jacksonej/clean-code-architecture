@@ -6,8 +6,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import arch.in.clean_arch_poc.data.cache.list.ArticleListCache;
-import arch.in.clean_arch_poc.data.model.ArticleDetail;
-import arch.in.clean_arch_poc.data.model.GithubContributor;
+import arch.in.clean_arch_poc.domain.model.ArticleDetail;
+import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import arch.in.clean_arch_poc.data.repository.source.RemoteDataStore;
 import arch.in.clean_arch_poc.domain.repository.Repository;
 import io.reactivex.Flowable;

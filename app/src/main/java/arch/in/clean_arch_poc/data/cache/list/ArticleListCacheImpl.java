@@ -12,7 +12,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import arch.in.clean_arch_poc.data.cache.room.AppDatabase;
-import arch.in.clean_arch_poc.data.model.GithubContributor;
+import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import io.reactivex.Flowable;
 @Singleton
 public class ArticleListCacheImpl implements ArticleListCache {

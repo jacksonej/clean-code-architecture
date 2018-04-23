@@ -6,10 +6,11 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import arch.in.clean_arch_poc.data.model.GithubContributor;
+
 import arch.in.clean_arch_poc.data.repository.DataRepository;
 import arch.in.clean_arch_poc.domain.interactor.CallbackWrapper;
 import arch.in.clean_arch_poc.domain.interactor.GetArticleList;
+import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import arch.in.clean_arch_poc.ui.MyPreferenceManager;
 import arch.in.clean_arch_poc.ui.base.BasePresenterImpl;
 

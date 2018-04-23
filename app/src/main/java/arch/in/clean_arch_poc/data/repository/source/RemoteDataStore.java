@@ -6,8 +6,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import arch.in.clean_arch_poc.data.api.ApiService;
-import arch.in.clean_arch_poc.data.model.ArticleDetail;
-import arch.in.clean_arch_poc.data.model.GithubContributor;
+import arch.in.clean_arch_poc.domain.model.ArticleDetail;
+import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import io.reactivex.Flowable;
 @Singleton
 public class RemoteDataStore implements DataStore {
