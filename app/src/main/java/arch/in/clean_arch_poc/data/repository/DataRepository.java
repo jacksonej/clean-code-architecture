@@ -41,7 +41,7 @@ public class DataRepository implements Repository {
 
     @Override
     public Flowable<ArticleDetail> getArticleDetails(String articleurl) {
-        /*ArticleDetailtCache mDetailCache = new ArticleDetailCacheImpl();
+        /*ArticleDetailCache mDetailCache = new ArticleDetailCacheImpl();
         if (mDetailCache.isCached() && !mDetailCache.isExpired()) {
             mDetailCache.get();
         }*/

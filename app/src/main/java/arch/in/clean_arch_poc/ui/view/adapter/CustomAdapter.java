@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 import arch.in.clean_arch_poc.R;
 import arch.in.clean_arch_poc.data.model.GithubContributor;
-import arch.in.clean_arch_poc.ui.splash.DetailActivity;
+import arch.in.clean_arch_poc.ui.detail.DetailActivity;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 

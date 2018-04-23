@@ -1,4 +1,4 @@
-package arch.in.clean_arch_poc.ui.splash;
+package arch.in.clean_arch_poc.ui.detail;
 
 import android.content.Intent;
 import android.os.Bundle;

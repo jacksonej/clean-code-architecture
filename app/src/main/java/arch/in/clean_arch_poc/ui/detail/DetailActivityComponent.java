@@ -1,4 +1,4 @@
-package arch.in.clean_arch_poc.ui.splash;
+package arch.in.clean_arch_poc.ui.detail;
 
 import dagger.Component;
 import arch.in.clean_arch_poc.data.repository.RepositoryComponent;

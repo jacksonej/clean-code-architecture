@@ -6,6 +6,7 @@ import android.content.Context;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import arch.in.clean_arch_poc.data.cache.list.ArticleListCacheImpl;
 import dagger.Module;
 import dagger.Provides;
 
@@ -28,7 +29,7 @@ public class DatabaseModule {
 
   @Provides
   @Singleton
-  GithuBContributorDao provideQuestionDao(AppDatabase appDatabase) {
+  ArticleListCacheImpl.GithuBContributorDao provideQuestionDao(AppDatabase appDatabase) {
     return appDatabase.userDao();
   }
 }

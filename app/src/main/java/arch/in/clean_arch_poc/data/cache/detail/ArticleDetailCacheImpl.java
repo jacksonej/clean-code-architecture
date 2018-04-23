@@ -4,7 +4,7 @@ import arch.in.clean_arch_poc.data.cache.Cache;
 import arch.in.clean_arch_poc.data.model.ArticleDetail;
 import io.reactivex.Flowable;
 
-public class ArticleDetailCacheImpl implements ArticleDetailtCache{
+public class ArticleDetailCacheImpl implements ArticleDetailCache {
 
 
    // private ArticleDetailCacheImpl(){}
