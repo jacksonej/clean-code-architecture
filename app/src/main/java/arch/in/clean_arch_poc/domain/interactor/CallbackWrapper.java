@@ -17,8 +17,8 @@ public abstract class CallbackWrapper<T> extends DisposableSubscriber<T> {
     //BaseView is just a reference of a View in MVP
     private WeakReference<BasePresenter> weakReference;
 
-    public CallbackWrapper(BasePresenter view) {
-        this.weakReference = new WeakReference<>(view);
+    public CallbackWrapper(BasePresenter presenter) {
+        this.weakReference = new WeakReference<>(presenter);
     }
 
     protected abstract void onSuccess(T t);
