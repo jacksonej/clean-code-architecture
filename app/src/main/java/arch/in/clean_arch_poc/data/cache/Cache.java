@@ -1,5 +1,7 @@
 package arch.in.clean_arch_poc.data.cache;
 
+import io.reactivex.Flowable;
+
 public interface Cache {
 
     void clearList();
@@ -7,9 +9,9 @@ public interface Cache {
     void saveList();
 
 
-    boolean isCached();
+    Flowable<Boolean> isCached();
 
     void setLastCacheTime();
 
-     boolean isExpired();
+    Flowable<Boolean> isExpired();
 }

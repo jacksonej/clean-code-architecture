@@ -6,10 +6,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-
 import arch.in.clean_arch_poc.data.repository.DataRepository;
+import arch.in.clean_arch_poc.domain.interactor.ArticleListUsecase;
 import arch.in.clean_arch_poc.domain.interactor.CallbackWrapper;
-import arch.in.clean_arch_poc.domain.interactor.GetArticleList;
+import arch.in.clean_arch_poc.domain.interactor.CommonResponse;
 import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import arch.in.clean_arch_poc.ui.MyPreferenceManager;
 import arch.in.clean_arch_poc.ui.base.BasePresenterImpl;
@@ -22,7 +22,7 @@ public class MainActivityPresenter extends BasePresenterImpl implements MainActi
     MyPreferenceManager prefs;
 
     @Inject
-    GetArticleList articleList;
+    ArticleListUsecase articleList;
 
 
     @Inject
@@ -37,12 +37,21 @@ public class MainActivityPresenter extends BasePresenterImpl implements MainActi
     @Override
     public void getApiCall() {
 
-
-        articleList.execute(new CallbackWrapper<List<GithubContributor>>(this) {
+        Long startTime=System.currentTimeMillis();
+        articleList.execute(new CallbackWrapper<CommonResponse<List<GithubContributor>>>(this) {
             @Override
-            protected void onSuccess(List<GithubContributor> githubContributors) {
-                view.setView(githubContributors);
+            protected void onSuccess(CommonResponse<List<GithubContributor>> listCoomonResponse) {
+                    List<GithubContributor> githubContributorsResponse = listCoomonResponse.getResponse();
+                   // Log.d("hai",listCoomonResponse.getTime()+"");
+                    if(listCoomonResponse.isFromNetwork())
+                    {
+                        Log.d("hai",(listCoomonResponse.getTime()-startTime)+" from Network ");
+                    }else{
+                        Log.d("hai",(listCoomonResponse.getTime()-startTime)+" from DataBase ");
+                    }
+                    view.setView(githubContributorsResponse);
             }
+
 
         },null);
 

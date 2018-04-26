@@ -8,20 +8,19 @@ import arch.in.clean_arch_poc.data.repository.DataRepository;
 import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import io.reactivex.Flowable;
 
-public class GetArticleList extends FlowableUsecase<List<GithubContributor>,String> {
+public class ArticleListUsecase extends FlowableUsecase<CommonResponse<List<GithubContributor>>,String> {
 
 
     DataRepository repository;
 
     @Inject
-    public GetArticleList(DataRepository repository) {
+    public ArticleListUsecase(DataRepository repository) {
         this.repository = repository;
     }
 
+
     @Override
-    public Flowable<List<GithubContributor>> buildUseCaseObservable(String param) {
+    Flowable<CommonResponse<List<GithubContributor>>> buildUseCaseObservable(String params) {
         return repository.getArticleList();
     }
-
-
 }

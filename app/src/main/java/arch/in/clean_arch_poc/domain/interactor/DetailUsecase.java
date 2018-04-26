@@ -6,13 +6,13 @@ import arch.in.clean_arch_poc.domain.model.ArticleDetail;
 import arch.in.clean_arch_poc.data.repository.DataRepository;
 import io.reactivex.Flowable;
 
-public class GetDetail extends FlowableUsecase<ArticleDetail,String> {
+public class DetailUsecase extends FlowableUsecase<ArticleDetail,String> {
 
 
     DataRepository repository;
 
     @Inject
-    public GetDetail(DataRepository repository) {
+    public DetailUsecase(DataRepository repository) {
         this.repository = repository;
     }
 

@@ -34,15 +34,17 @@ public class ArticleDetailCacheImpl implements ArticleDetailCache {
     }
 
     @Override
+    public Flowable<Boolean> isCached() {
+        return null;
+    }
+
+    @Override
     public Flowable<ArticleDetail> get() {
         return null;
     }
 
 
-    @Override
-    public boolean isCached() {
-        return true;
-    }
+
 
     @Override
     public void setLastCacheTime() {
@@ -50,8 +52,9 @@ public class ArticleDetailCacheImpl implements ArticleDetailCache {
     }
 
     @Override
-    public boolean isExpired() {
-
-        return true;
+    public Flowable<Boolean> isExpired() {
+        return null;
     }
+
+
 }

@@ -2,10 +2,10 @@ package arch.in.clean_arch_poc.ui.detail;
 
 import javax.inject.Inject;
 
+import arch.in.clean_arch_poc.domain.interactor.DetailUsecase;
 import arch.in.clean_arch_poc.domain.model.ArticleDetail;
 import arch.in.clean_arch_poc.data.repository.DataRepository;
 import arch.in.clean_arch_poc.domain.interactor.CallbackWrapper;
-import arch.in.clean_arch_poc.domain.interactor.GetDetail;
 import arch.in.clean_arch_poc.ui.MyPreferenceManager;
 import arch.in.clean_arch_poc.ui.base.BasePresenterImpl;
 
@@ -17,7 +17,7 @@ public class DetailPresenter extends BasePresenterImpl implements DetailActivity
     MyPreferenceManager prefs;
 
     @Inject
-    GetDetail getDetail;
+    DetailUsecase detailUsecase;
 
     @Inject
     public DetailPresenter(DataRepository repository, DetailActivityContract.View view, MyPreferenceManager myPreferenceManager) {
@@ -32,7 +32,7 @@ public class DetailPresenter extends BasePresenterImpl implements DetailActivity
     public void getApiCall(String url) {
 
 
-        getDetail.execute(new CallbackWrapper<ArticleDetail>(this) {
+        detailUsecase.execute(new CallbackWrapper<ArticleDetail>(this) {
             @Override
             protected void onSuccess(ArticleDetail articleDetail) {
                 view.setView(articleDetail);

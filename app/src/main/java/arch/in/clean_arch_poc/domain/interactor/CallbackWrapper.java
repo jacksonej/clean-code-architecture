@@ -1,7 +1,5 @@
 package arch.in.clean_arch_poc.domain.interactor;
 
-import android.util.Log;
-
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -25,9 +23,12 @@ public abstract class CallbackWrapper<T> extends DisposableSubscriber<T> {
 
     @Override
     public void onNext(T t) {
-        //You can return StatusCodes of different cases from your API and handle it here. I usually include these cases on BaseResponse and iherit it from every Response
-       Log.d("hai","in onnext");
-        onSuccess(t);
+        //You can return StatusCodes of different cases from your API and handle it here. I usually include these cases on BaseResponse and iherit it from every response
+     //  Log.d("hai","in onnext");
+       CommonResponse<T> comonResponse= (CommonResponse<T>) t;
+       comonResponse.setTime(System.currentTimeMillis());
+
+        onSuccess((T) comonResponse);
     }
 
     @Override
@@ -43,6 +44,7 @@ public abstract class CallbackWrapper<T> extends DisposableSubscriber<T> {
         } else {
             presenter.onUnknownError(e.getMessage());
         }
+
     }
 
     @Override

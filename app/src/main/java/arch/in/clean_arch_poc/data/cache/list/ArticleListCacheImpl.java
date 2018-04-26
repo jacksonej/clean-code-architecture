@@ -1,10 +1,5 @@
 package arch.in.clean_arch_poc.data.cache.list;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.OnConflictStrategy;
-import android.arch.persistence.room.Query;
 
 import java.util.List;
 
@@ -14,6 +9,8 @@ import javax.inject.Singleton;
 import arch.in.clean_arch_poc.data.cache.room.AppDatabase;
 import arch.in.clean_arch_poc.domain.model.GithubContributor;
 import io.reactivex.Flowable;
+import io.reactivex.schedulers.Schedulers;
+
 @Singleton
 public class ArticleListCacheImpl implements ArticleListCache {
 
@@ -35,9 +32,17 @@ public class ArticleListCacheImpl implements ArticleListCache {
     }
 
     @Override
-    public boolean isCached() {
-        return false;
+    public Flowable<Boolean> isCached() {
+        return db.userDao().getCount().flatMap(res -> {
+                    if (res > 0) {
+                        return Flowable.just(true);
+                    } else {
+                        return Flowable.just(false);
+                    }
+                }
+        ).subscribeOn(Schedulers.io());
     }
+
 
     @Override
     public void setLastCacheTime() {
@@ -45,9 +50,17 @@ public class ArticleListCacheImpl implements ArticleListCache {
     }
 
     @Override
-    public boolean isExpired() {
-        return false;
+    public Flowable<Boolean> isExpired() {
+        return db.userDao().getCount().flatMap(res -> {
+                    if (res > 0) {
+                        return Flowable.just(true);
+                    } else {
+                        return Flowable.just(false);
+                    }
+                }
+        ).subscribeOn(Schedulers.io());
     }
+
 
     @Override
     public Flowable<List<GithubContributor>> get() {
@@ -61,16 +74,5 @@ public class ArticleListCacheImpl implements ArticleListCache {
 
     }
 
-    @Dao
-    public static interface GithuBContributorDao {
 
-        @Query("SELECT * FROM githubcontributor")
-        Flowable<List<GithubContributor>> getAll();
-
-       @Insert(onConflict = OnConflictStrategy.IGNORE)
-        void insertAll(List<GithubContributor> users);
-
-        @Delete
-        void delete(GithubContributor user);
-    }
 }
