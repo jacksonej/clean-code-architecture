@@ -3,7 +3,6 @@ package arch.in.clean_arch_poc.ui.Main;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +39,7 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
         presenter.getApiCall();
         presenter.check();
         setupRecyclerView();
-       Log.d("hai",service.getString());
+      // Log.d("hai",service.getString());
 
     }
 
