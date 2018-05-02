@@ -30,6 +30,8 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
     MyService service;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,7 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
         presenter.check();
         setupRecyclerView();
        Log.d("hai",service.getString());
+
     }
 
     private void initializePresenter() {
