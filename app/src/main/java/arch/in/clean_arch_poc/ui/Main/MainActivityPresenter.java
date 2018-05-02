@@ -38,6 +38,7 @@ public class MainActivityPresenter extends BasePresenterImpl implements MainActi
     public void getApiCall() {
 
         Long startTime=System.currentTimeMillis();
+
         articleList.execute(new CallbackWrapper<CommonResponse<List<GithubContributor>>>(this) {
             @Override
             protected void onSuccess(CommonResponse<List<GithubContributor>> listCoomonResponse) {
