@@ -4,4 +4,5 @@ public interface BasePresenter {
     void onConnectionTimeOut();
     void onUnknownError(String message);
     void onNetworkError();
+    void onDestroy();
 }

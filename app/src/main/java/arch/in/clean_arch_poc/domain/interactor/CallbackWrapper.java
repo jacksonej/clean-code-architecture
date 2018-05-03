@@ -25,10 +25,16 @@ public abstract class CallbackWrapper<T> extends DisposableSubscriber<T> {
     public void onNext(T t) {
         //You can return StatusCodes of different cases from your API and handle it here. I usually include these cases on BaseResponse and iherit it from every response
      //  Log.d("hai","in onnext");
-       CommonResponse<T> comonResponse= (CommonResponse<T>) t;
-       comonResponse.setTime(System.currentTimeMillis());
+        CommonResponse<T> comonResponse= null;
+        try {
+            comonResponse = (CommonResponse<T>) t;
+            comonResponse.setTime(System.currentTimeMillis());
+            onSuccess((T) comonResponse);
+        } catch (Exception e) {
+            onSuccess(t);
+        }
 
-        onSuccess((T) comonResponse);
+
     }
 
     @Override

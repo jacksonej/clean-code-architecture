@@ -71,5 +71,12 @@ public class MainActivity extends BaseActivity implements MainActivityContract.V
     public void onNetworkError() {
         super.onNetworkError();
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.onDestroy();
+    }
 }
 

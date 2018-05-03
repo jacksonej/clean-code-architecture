@@ -1,8 +1,8 @@
 package arch.in.clean_arch_poc.ui.Main;
 
+import arch.in.clean_arch_poc.ui.base.ActivityScope;
 import dagger.Module;
 import dagger.Provides;
-import arch.in.clean_arch_poc.ui.base.ActivityScope;
 
 
 @ActivityScope
@@ -16,6 +16,10 @@ public class MainActivityModule {
         mView = view;
 
     }
+
+
+
+
 
     @Provides
     public MainActivityContract.View getProvideView() {

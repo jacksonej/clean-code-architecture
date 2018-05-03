@@ -22,4 +22,9 @@ public class BasePresenterImpl implements BasePresenter{
     public void onNetworkError() {
         view.onNetworkError();
     }
+
+    @Override
+    public void onDestroy() {
+
+    }
 }

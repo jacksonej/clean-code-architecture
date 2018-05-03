@@ -10,5 +10,4 @@ public interface MainActivityComponent {
 
     void inject(MainActivity mainActivity);
 
-
 }

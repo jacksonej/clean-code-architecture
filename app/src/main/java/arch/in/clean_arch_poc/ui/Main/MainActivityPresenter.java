@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import arch.in.clean_arch_poc.data.repository.DataRepository;
 import arch.in.clean_arch_poc.domain.interactor.ArticleListUsecase;
 import arch.in.clean_arch_poc.domain.interactor.CallbackWrapper;
 import arch.in.clean_arch_poc.domain.interactor.CommonResponse;
@@ -17,7 +16,6 @@ import arch.in.clean_arch_poc.ui.base.BasePresenterImpl;
 public class MainActivityPresenter extends BasePresenterImpl implements MainActivityContract.Presenter {
 
 
-    DataRepository repository;
     MainActivityContract.View view;
     MyPreferenceManager prefs;
 
@@ -26,10 +24,9 @@ public class MainActivityPresenter extends BasePresenterImpl implements MainActi
 
 
     @Inject
-    public MainActivityPresenter(DataRepository repository, MainActivityContract.View view,MyPreferenceManager myPreferenceManager) {
+    public MainActivityPresenter( MainActivityContract.View view,MyPreferenceManager myPreferenceManager) {
         super(view);
         this.view = view;
-        this.repository = repository;
         this.prefs=myPreferenceManager;
     }
 
@@ -63,5 +60,10 @@ public class MainActivityPresenter extends BasePresenterImpl implements MainActi
 
     public void check(){
         Log.e("check","check");
+    }
+
+    @Override
+    public void onDestroy() {
+        articleList.dispose();
     }
 }

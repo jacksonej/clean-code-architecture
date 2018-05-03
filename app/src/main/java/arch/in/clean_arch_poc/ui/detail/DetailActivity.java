@@ -71,4 +71,11 @@ public class DetailActivity extends BaseActivity implements DetailActivityContra
                 .apply(options.fitCenter())
                 .into(image);
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.onDestroy();
+    }
 }
